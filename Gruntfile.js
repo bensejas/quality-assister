@@ -1,35 +1,43 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
-	require('load-grunt-tasks')(grunt, {
+    require('load-grunt-tasks')(grunt, {
         pattern: ['grunt-*']
     });
 
-	grunt.initConfig({
-		pkg: grunt.file.readJSON('package.json'),
-		watch: {
-			sass: {
-                files: ['app/css/**/*.scss'],
-                tasks: ['sass'],
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+        connect: {
+            server: {
                 options: {
-                    spawn: false
+                    port: 9001,
+                    middleware: function (connect) {
+                        var serveStatic = require('serve-static');
+                        return [
+                            //require('grunt-connect-prism/middleware'),
+                            require('grunt-connect-prism/middleware'),
+                            connect().use('/bower_components', serveStatic('./bower_components')),
+                            //connect().use('/images', connect.static('./images')),
+                            //connect().use('/data', connect.static('./data')),
+                            connect().use('/app', serveStatic('./app')),
+                            serveStatic('app')
+                        ];
+                    }
                 }
             }
-		},
-		sass: {
-            dev: {
+        },
+        watch: {
+            main: {
                 options: {
-                    style: 'expanded',
+                    livereload: true,
+                    livereloadOnError: true,
+                    spawn: false
                 },
-                files: {
-                    'app/css/style.css': 'app/css/style.scss',
-                }
+                files: ['app/**/*.less', 'app/**/*.js', 'app/**/*.html'],
+                tasks: [] //all the tasks are run dynamically during the watch event handler
             }
         }
-	});
+    });
 
-	grunt.registerTask('default', [
-		'sass',
-		'watch'
-		]);
+    grunt.registerTask('serve', ['connect', 'watch']);
 
 };

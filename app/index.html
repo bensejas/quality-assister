@@ -1,27 +1,52 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="qualityAssurerApp">
+<html  ng-app="qualityAssister" lang="en">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<base href="/">
 
 	<title>Quality Assister</title>
 
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
-
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" href="./css/style.css">
-	<script src="./js/qualityAssurerApp.js"></script>
+	<link rel="stylesheet" href="app/fonts/questa_sansregular.css" type="text/css" charset="utf-8" />
+	<link href="app/app.less" type="text/css" rel="stylesheet/less">
 
 
 </head>
 <body>
-	<div ng-controller="QualityAssurerController as assurer">
+
+	<div class="layout">
+		<div class="layout__body" ui-view="body"></div>
 	</div>
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	
+
+	<!-- JS that is for development only -->
+	<script src="http://localhost:35729/livereload.js"></script>
+	<script src="bower_components/less/dist/less.js"></script>
+
+	<!-- JS from bower_components and vendor -->
+	<script src="bower_components/jquery/dist/jquery.js" data-vendor="true"></script>
+	<script src="bower_components/lodash/lodash.js" data-vendor="true"></script>
+	<script src="bower_components/angular/angular.js" data-vendor="true"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.js" data-vendor="true"></script>
+
+	<!-- Main App JS -->
+	<script src="app/app.js" data-app="true"></script>
+
+	<script src="app/core/core.js" data-app="true"></script>
+	<script src="app/core/providers/viewsProvider.js" data-app="true"></script>
+
+	<script src="app/action/action.js" data-app="true"></script>
+	<script src="app/action/directives/actionListDirective/actionListDirective.js" data-app="true"></script>
+
+	<script src="app/dashboard/dashboard.js" data-app="true"></script>
+	<script src="app/dashboard/dashboard.routes.js" data-app="true"></script>
+	<script src="app/dashboard/components/dashboardComponent.js" data-app="true"></script>
+
+	<script src="app/heuristics/heuristics.js" data-app="true"></script>
+	<script src="app/heuristics/directives/heuristicsDirective/heuristicsDirective.js" data-app="true"></script>
+
+	<script src="app/mindMap/mindMap.js" data-app="true"></script>
+	<script src="app/mindMap/directives/mindMapDirective/mindMapDirective.js" data-app="true"></script>
+
 </body>
 </html>
