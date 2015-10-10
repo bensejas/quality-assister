@@ -1,10 +1,14 @@
 <div class="actionListDirective">
-    <a class="actionListDirective__action-item">
-        <div class="actionListDirective__icon"><i class="fa fa-code"></i></div>
-        <div class="actionListDirective__text">Development</div>
+    <a class="actionListDirective__action-item" ng-click="ctrl.selectAction('Test Ideas')" ng-class="{'actionListDirective__action-item--highlight': ctrl.selectedAction === 'Test Ideas'}">
+        <div class="actionListDirective__icon"><i class="fa fa-lightbulb-o"></i></div>
+        <div class="actionListDirective__text">Test Ideas</div>
     </a>
-    <a class="actionListDirective__action-item">
-        <div class="actionListDirective__icon"><i class="fa fa-gavel"></i></div>
-        <div class="actionListDirective__text">Testing</div>
+    <a class="actionListDirective__action-item" ng-click="ctrl.selectAction('Exploratory')" ng-class="{'actionListDirective__action-item--highlight': ctrl.selectedAction === 'Exploratory'}">
+        <div class="actionListDirective__icon"><i class="fa fa-bug"></i></div>
+        <div class="actionListDirective__text">Exploratory</div>
+    </a>
+    <a class="actionListDirective__action-item" ng-click="ctrl.selectAction('Knowledge')" ng-class="{'actionListDirective__action-item--highlight': ctrl.selectedAction === 'Knowledge'}">
+        <div class="actionListDirective__icon"><i class="fa fa-book"></i></div>
+        <div class="actionListDirective__text">Knowledge</div>
     </a>
 </div>

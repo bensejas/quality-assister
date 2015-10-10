@@ -1,5 +1,19 @@
 <div class="heuristicsDirective">
     <div class="heuristicsDirective__container">
-        <div class="heuristicsDirective__title">Heuristics will go here</div>
+        <div class="heuristicsDirective__title">Heuristics</div>
+        <div class="heuristicsDirective__item-container">
+            <div class="heuristicsDirective__item-list">
+                <div class="heuristicsDirective__item__select" ng-repeat="heuristic in ctrl.heuristics"
+                     ng-class="{'heuristicsDirective__item--highlight': ctrl.selectedHeuristic.name === heuristic.name}"
+                     ng-click="ctrl.showHeuristic(heuristic)">{{heuristic.name}}
+                </div>
+            </div>
+            <div class="heuristicsDirective__item__display">
+                <div class="heuristicsDirective__item__name">{{ctrl.selectedHeuristic.name}}</div>
+                <div class="heuristicsDirective__item__description">{{ctrl.selectedHeuristic.description}}</div>
+            </div>
+        </div>
+
     </div>
+</div>
 </div>

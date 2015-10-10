@@ -1,14 +1,62 @@
 .heuristicsDirective {
     height: 20%;
+    color: #000;
 }
 
 .heuristicsDirective__container {
     height: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+
 }
 
 .heuristicsDirective__title {
-    font-size: 22px;
+    font-size: 26px;
     line-height: 1em;
+    text-align: left;
+    color: #FFB405;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.heuristicsDirective__item-container {
+    .display(flex);
+}
+
+.heuristicsDirective__item__select {
+    font-weight: bold;
+    font-size: 16px;
+
+    &:hover {
+        background-color: rgba(63, 207, 244, 0.4);
+        cursor: pointer;
+    }
+}
+
+.heuristicsDirective__item--highlight {
+    background-color: rgba(63, 207, 244, 0.15);
+}
+
+.heuristicsDirective__item__name {
+    font-weight: bold;
     text-align: center;
-    color: #000000;
+    padding-bottom: 10px;
+    font-size: 22px;
+    line-height: 1.2em;
+}
+
+.heuristicsDirective__item-list {
+    .flex(0 0 140px);
+    border-right: 1px solid #e7e7e7;
+}
+
+.heuristicsDirective__item__display {
+    .flex(1 0 0px);
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.5em;
+}
+
+.heuristicsDirective__item__description {
+
 }

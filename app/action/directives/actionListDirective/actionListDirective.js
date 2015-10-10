@@ -20,7 +20,12 @@
         function Controller() {
             var ctrl = this;
 
+            ctrl.selectedAction = 'Test Ideas';
+            ctrl.selectAction = selectAction;
 
+            function selectAction(action) {
+                ctrl.selectedAction = action;
+            }
         }
     }
 })();
